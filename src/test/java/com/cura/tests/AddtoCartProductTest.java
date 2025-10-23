@@ -12,8 +12,9 @@ import org.testng.annotations.Test;
 import com.cura.pages.OpenCartLoginPage;
 import com.cura.pages.ProductPage;
 import com.cura.utils.DriverFactory;
+import com.cura.utils.ReportManager;
 
-public class AddtoCartProductTest {
+public class AddtoCartProductTest extends BaseTest {
 
 	WebDriver driver;
 	OpenCartLoginPage openCartLoginPage;
@@ -33,7 +34,6 @@ public class AddtoCartProductTest {
 
 	}
 
-	
 	public void testAddtoCart() {
 		// Step : 1 :login
 		openCartLoginPage.loginAs("standard_user", "secret_sauce");
@@ -51,6 +51,7 @@ public class AddtoCartProductTest {
 	@Test
 	// Check multiple product added into cart
 	public void testMultipleProductAddtoCart() {
+		ReportManager.getTest().info("Logging in with standard_user");
 
 		// Step : 1 :login
 		openCartLoginPage.loginAs("standard_user", "secret_sauce");
@@ -59,25 +60,32 @@ public class AddtoCartProductTest {
 		List<String> productsToAdd = Arrays.asList("Sauce Labs Backpack", "Sauce Labs Bike Light",
 				"Sauce Labs Bolt T-Shirt");
 
+		ReportManager.getTest().info("Adding multiple products: " + productsToAdd);
 		boolean isAddedAll = productPage.addMultipleProducttoCartByName(productsToAdd);
 
 		// Step 3: Assert it was added successfully
 		System.out.println("Before Assertion");
 		Assert.assertTrue(isAddedAll, "Not all products were added successfully.");
 		System.out.println("After Assertion");
-		
-		//Step: 4: Item Count Checck
+		ReportManager.getTest().info("All products added successfully");
+
+		// Step: 4: Item Count Checck
 		int expectedCount = productsToAdd.size();
 		int actualCount = productPage.getCartItemCount();
-		System.out.println("Exp Count :"+expectedCount);
-		System.out.println("Actual Count :"+actualCount);
+		ReportManager.getTest().info("Expected cart count: " + expectedCount + ", Actual: " + actualCount);
+
+		System.out.println("Exp Count :" + expectedCount);
+		System.out.println("Actual Count :" + actualCount);
 		Assert.assertEquals(actualCount, expectedCount, "Cart item count mismatch.");
+		ReportManager.getTest().pass("Multiple product add to cart test passed!");
 
 	}
 
 	@AfterClass
 	public void tearDown() {
 		DriverFactory.quitDriver();
+		ReportManager.getTest().info("Browser closed");
+
 	}
 
 }

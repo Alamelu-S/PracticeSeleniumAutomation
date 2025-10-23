@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.cura.tests.CheckoutTest">
+      <class name="com.cura.tests.OpenCartLoginTest">
         <methods>
-          <include name="testMultipleItemCompleteCheckoutFlow"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="testInvalidLogin"/>
+          <include name="flushReport"/>
+          <include name="initReport"/>
+          <include name="startTest"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.cura.tests.CheckoutTest -->
+      </class> <!-- com.cura.tests.OpenCartLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

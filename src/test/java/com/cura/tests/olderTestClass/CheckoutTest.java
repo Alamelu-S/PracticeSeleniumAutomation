@@ -1,4 +1,4 @@
-package com.cura.tests;
+package com.cura.tests.olderTestClass;
 
 import java.util.Arrays;
 import java.util.List;
@@ -70,7 +70,6 @@ public class CheckoutTest {
 
 	}
 
-	
 	// ✅ Multiple Item Checkout Flow
 	@Test
 	public void testMultipleItemCompleteCheckoutFlow() {

@@ -1,0 +1,15 @@
+<suite name="OpenCartSuite" verbose="1" parallel="false">
+
+	<listeners>
+		<listener class-name="com.cura.listeners.TestListener" />
+	</listeners>
+
+	<test name="OpenCartTests">
+		<classes>
+			<class name="com.cura.tests.OpenCartLoginTest" />
+			<class name="com.cura.tests.AddtoCartProductTest" />
+			<class name="com.cura.tests.CartTest" />
+		</classes>
+	</test>
+
+</suite>
