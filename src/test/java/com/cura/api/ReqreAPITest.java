@@ -31,8 +31,9 @@ public class ReqreAPITest extends BaseAPI {
         Response response = RestAssured
                 .given()
                 .header("x-api-key", getApiKey())   // API key from config
+                .pathParam("id", 2)
                 .when()
-                .get("/users/2");
+                .get("/users/{id}");
 
         System.out.println("Response status in GET: " + response.getStatusCode());
 

@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "title": "Updated Shirt",
+  "price": 999,
+  "description": "Updated via API automation",
+  "category": "men's clothing",
+  "image": "https://i.pravatar.cc"
+}

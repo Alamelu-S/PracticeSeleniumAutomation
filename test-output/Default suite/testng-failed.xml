@@ -5,6 +5,7 @@
     <classes>
       <class name="com.cura.api.ReqreAPITest">
         <methods>
+          <include name="testGetUser"/>
           <include name="setUp"/>
           <include name="testCreateUser"/>
         </methods>

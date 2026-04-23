@@ -14,7 +14,8 @@ public class BaseAPI {
         try {
             // Use your current absolute path
             FileInputStream fis = new FileInputStream(
-                    "C:\\Users\\alame\\eclipse-workspace\\seleniumautomation\\src\\test\\java\\resources\\configFiles\\config.properties"
+                    "C:\\Users\\alame\\eclipse-workspace\\seleniumautomation"
+                    + "\\src\\test\\java\\resources\\configFiles\\config.properties"
             );
 
             prop.load(fis);
